@@ -40,6 +40,6 @@ public class Test {
 
 方法有多个入参时，需指定哪个参数进行分批，有且仅有一个参数能注解`@BatchParam` ;
 
-分批执行的类型只能是 `Object[]` 包装类型数组 或 `List` 列表
+分批执行的类型和返回值只能是 `Object[]` 包装类型数组 或 `List` 列表
 
 TODO: `@BatchRun(batchSize= "${batch.size}") `
