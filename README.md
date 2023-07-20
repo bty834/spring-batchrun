@@ -32,7 +32,8 @@ public class Test {
 
     @BatchRun(batchSize = 2)
     public Object[] t3(List<Object> input) {...};
-
+    
+    @BatchRun(batchSize = 2)
     public List<Object> t4(Object a, List<Object> b, @BatchParam List<Object> input){...};
 }
 ```
