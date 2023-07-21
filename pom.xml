@@ -6,7 +6,15 @@
 
     <groupId>site.btyhub</groupId>
     <artifactId>spring-batchrun</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1</version>
+
+    <developers>
+        <developer>
+            <name>baotingyu</name>
+            <email>baotingyu1997@gmail.com</email>
+            <url>https://btyhub.site</url>
+        </developer>
+    </developers>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -20,11 +28,7 @@
             <artifactId>slf4j-api</artifactId>
             <version>2.0.7</version>
         </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>2.0.3</version>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>

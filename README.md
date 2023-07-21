@@ -7,7 +7,7 @@
 
 ```java
 // 启用分批执行
-@EnableBatchRun
+@EnableBatchRun(aopOrder = Ordered.LOWEST_PRECEDENCE-1000)
 @SpringBootApplication
 public class Example implements ApplicationRunner {
     public static void main(String[] args) {
@@ -19,22 +19,27 @@ public class Example implements ApplicationRunner {
 第二步：注解分批执行方法
 
 ```java
-import site.btyhub.batchrun.annotation.BatchParam;
-
 @Service
-public class Test {
+public class TestService {
 
-    @BatchRun(batchSize = 2)
-    public List<String> t1(List<String> input) {...};
-
-    @BatchRun(batchSize = 2)
-    public List<Object> t2(Object[] input) {...};
-
-    @BatchRun(batchSize = 2)
-    public Object[] t3(List<Object> input) {...};
+    // 数值字符串
+    @BatchRun(batchSize = "2")
+    public List<String> test1(List<String> input){
+        // ...
+    }
     
-    @BatchRun(batchSize = 2)
-    public List<Object> t4(Object a, List<Object> b, @BatchParam List<Object> input){...};
+    // ${} ，返回值和参数支持 Object[] 和 List
+    @BatchRun(batchSize = "${test.batchSize}")
+    public String[] test2(String[] input){
+        // ...
+    }
+    
+    // spring EL，多参数时使用@BatchParam
+    @BatchRun(batchSize = "#{5-4}")
+    public List<String> test3(List<String> a,@BatchParam List<String> input){
+        // ...
+    }
+
 }
 ```
 方法有一个入参时，无需注解`@BatchParam`;
@@ -43,4 +48,5 @@ public class Test {
 
 分批执行的类型和返回值只能是 `Object[]` 包装类型数组 或 `List` 列表
 
-TODO: `@BatchRun(batchSize= "${batch.size}") `
+
+该AOP优先级可在@EnableBatchRun中配置，默认执行优先级为 `Ordered.LOWEST_PRECEDENCE - 100`：当同时存在 `@Transactional`注解时，`@BatchRun`的代理执行会包住事务，`@Retryable`也是如此。（`@Transactional`和`@Retryable`都是`Ordered.LOWEST_PRECEDENCE`）

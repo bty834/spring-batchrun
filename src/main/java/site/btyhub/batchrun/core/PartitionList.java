@@ -14,7 +14,7 @@ public class PartitionList extends AbstractList<List> {
     final List list;
     final int batchSize;
 
-    PartitionList(List list, int batchSize) {
+    public PartitionList(List list, int batchSize) {
         this.list = list;
         this.batchSize = batchSize;
     }

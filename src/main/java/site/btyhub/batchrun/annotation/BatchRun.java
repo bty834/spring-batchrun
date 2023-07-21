@@ -17,7 +17,8 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD})
 public @interface BatchRun {
 
-    int batchSize() default 50;
+
+    String batchSize() default "50";
 
 
 }

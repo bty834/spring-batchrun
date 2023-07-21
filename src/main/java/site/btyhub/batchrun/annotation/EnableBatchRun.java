@@ -1,5 +1,6 @@
 package site.btyhub.batchrun.annotation;
 
+import static site.btyhub.batchrun.annotation.BatchRunImportBeanDefinitionRegistrar.DEFAULT_AOP_ORDER;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -17,4 +18,6 @@ import org.springframework.context.annotation.Import;
 @Documented
 @Import(BatchRunImportBeanDefinitionRegistrar.class)
 public @interface EnableBatchRun {
+
+    int aopOrder() default DEFAULT_AOP_ORDER;
 }
