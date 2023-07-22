@@ -50,3 +50,5 @@ public class TestService {
 
 
 该AOP执行优先级为 `Ordered.LOWEST_PRECEDENCE - 100`：当同时存在 `@Transactional`注解时，`@BatchRun`的代理执行会包住事务，`@Retryable`也是如此。（`@Transactional`和`@Retryable`都是`Ordered.LOWEST_PRECEDENCE`）
+
+注：类内方法调用由于AOP限制，无法且切面拦截
