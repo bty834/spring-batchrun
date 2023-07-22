@@ -6,17 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9dcc6ea4-a0c4-409c-b572-c883b8fd529f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/btyhub/Example.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/annotation/BatchRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/annotation/BatchRun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/annotation/BatchRunImportBeanDefinitionRegistrar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/annotation/BatchRunImportBeanDefinitionRegistrar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/core/BatchRunAdvisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/aop/BatchRunAdvisor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/core/BatchRunInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/aop/BatchRunInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/core/BatchRunPointCut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/aop/BatchRunPointCut.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/core/PartitionList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/core/PartitionList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/btyhub/test/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +109,7 @@
       <workItem from="1689855223605" duration="12472000" />
       <workItem from="1689869964795" duration="25000" />
       <workItem from="1689928552102" duration="3355000" />
-      <workItem from="1689943001160" duration="5549000" />
+      <workItem from="1689943001160" duration="9355000" />
     </task>
     <servers />
   </component>
@@ -142,17 +131,17 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/aop/BatchRunInterceptor.java</url>
-          <line>207</line>
+          <line>201</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/aop/BatchRunInterceptor.java</url>
-          <line>40</line>
+          <line>35</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/aop/BatchRunInterceptor.java</url>
-          <line>61</line>
+          <line>56</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>

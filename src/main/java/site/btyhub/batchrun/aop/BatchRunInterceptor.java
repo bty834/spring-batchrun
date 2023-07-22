@@ -109,7 +109,7 @@ public class BatchRunInterceptor implements MethodInterceptor {
 
 
         if (Objects.isNull(param)) {
-            // let annotated method handles null input, batchrun don't do anything
+            // let annotated method handles null input, BatchRun don't do anything
             return invocation.proceed();
         }
         if (!isArrayOrList(param)) {
@@ -213,6 +213,7 @@ public class BatchRunInterceptor implements MethodInterceptor {
     }
 
 
+    @SuppressWarnings("rawtypes")
     private void addResult(List<Object> result, Object invoke, Class<?> retType) {
         if (isArray(retType)) {
             Object[] res = (Object[]) invoke;
