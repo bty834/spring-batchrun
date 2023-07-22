@@ -49,4 +49,4 @@ public class TestService {
 分批执行的类型和返回值只能是 `Object[]` 包装类型数组 或 `List` 列表
 
 
-该AOP优先级可在@EnableBatchRun中配置，默认执行优先级为 `Ordered.LOWEST_PRECEDENCE - 100`：当同时存在 `@Transactional`注解时，`@BatchRun`的代理执行会包住事务，`@Retryable`也是如此。（`@Transactional`和`@Retryable`都是`Ordered.LOWEST_PRECEDENCE`）
+该AOP执行优先级为 `Ordered.LOWEST_PRECEDENCE - 100`：当同时存在 `@Transactional`注解时，`@BatchRun`的代理执行会包住事务，`@Retryable`也是如此。（`@Transactional`和`@Retryable`都是`Ordered.LOWEST_PRECEDENCE`）

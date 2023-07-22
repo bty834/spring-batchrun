@@ -6,9 +6,7 @@ import org.springframework.aop.support.AbstractPointcutAdvisor;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
-import org.springframework.beans.factory.SmartInitializingSingleton;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+import org.springframework.core.Ordered;
 
 /**
  *
@@ -16,6 +14,7 @@ import org.springframework.context.ApplicationContextAware;
  * @date: 2023/7/19
  **/
 public class BatchRunAdvisor extends AbstractPointcutAdvisor implements BeanFactoryAware {
+
 
 
     private final BatchRunPointCut batchRunPointCut = new BatchRunPointCut();
@@ -36,4 +35,8 @@ public class BatchRunAdvisor extends AbstractPointcutAdvisor implements BeanFact
         this.batchRunInterceptor = new BatchRunInterceptor(beanFactory);
     }
 
+    @Override
+    public int getOrder() {
+        return Ordered.LOWEST_PRECEDENCE - 100;
+    }
 }
