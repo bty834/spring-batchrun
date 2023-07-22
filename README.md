@@ -7,7 +7,7 @@
 
 ```java
 // 启用分批执行
-@EnableBatchRun(aopOrder = Ordered.LOWEST_PRECEDENCE-1000)
+@EnableBatchRun
 @SpringBootApplication
 public class Example implements ApplicationRunner {
     public static void main(String[] args) {
