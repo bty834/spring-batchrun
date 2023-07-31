@@ -1,12 +1,14 @@
-# 背景
-在业务开发过程中，经常需要批量调用方法（如feign调用其他服务），但批量一般考虑到调用方法性能、接口响应超时等因素需要做分批调用，常常利用guava的Lists.partition方法对入参做分批，很多冗余重复代码。该组件利用方法注解透明地对方法做了分批调用，极大地加快了开发效率。
+# Background
+when developing some business logic, it's common to call other service interfaces through Feign or RPC in one user request, 
+and there are many batch-operation calls. To avoid timeout and performance, we usually limit the batch size in one remote call.
+Typically, we use guava's `Lists.partition(...)` to achieve that goal, instead we use annotation-based way to accomplish.
 
 # QuickStart
 
-第一步：启用分批执行
+STEP 1：Enable it
 
 ```java
-// 启用分批执行
+// enable it 
 @EnableBatchRun
 @SpringBootApplication
 public class Example implements ApplicationRunner {
@@ -16,25 +18,25 @@ public class Example implements ApplicationRunner {
 }
 ```
 
-第二步：注解分批执行方法
+STEP 2：Annotate methods 
 
 ```java
 @Service
 public class TestService {
 
-    // 数值字符串
+    // supports numbers in String type
     @BatchRun(batchSize = "2")
     public List<String> test1(List<String> input){
         // ...
     }
     
-    // ${} ，返回值和参数支持 Object[] 和 List
+    // ${} ，supports value injection, input 
     @BatchRun(batchSize = "${test.batchSize}")
     public String[] test2(String[] input){
         // ...
     }
     
-    // spring EL，多参数时使用@BatchParam
+    // supports spring EL, use @BatchParam to designate which parameter to split its size when multiple parameters
     @BatchRun(batchSize = "#{5-4}")
     public List<String> test3(List<String> a,@BatchParam List<String> input){
         // ...
@@ -42,13 +44,16 @@ public class TestService {
 
 }
 ```
-方法有一个入参时，无需注解`@BatchParam`;
+- method has only one parameter，no need to annotate with `@BatchParam`;
 
-方法有多个入参时，需指定哪个参数进行分批，有且仅有一个参数能注解`@BatchParam` ;
+- method has many parameter，only one parameter can be annotated with `@BatchParam` ;
 
-分批执行的类型和返回值只能是 `Object[]` 包装类型数组 或 `List` 列表
+- parameter type and return type  can only be  `Object[]` or `List` 
 
+PS:
 
-该AOP执行优先级为 `Ordered.LOWEST_PRECEDENCE - 100`：当同时存在 `@Transactional`注解时，`@BatchRun`的代理执行会包住事务，`@Retryable`也是如此。（`@Transactional`和`@Retryable`都是`Ordered.LOWEST_PRECEDENCE`）
+The order of this AOP is `Ordered.LOWEST_PRECEDENCE - 100`.
 
-注：类内方法调用由于AOP限制，无法且切面拦截
+When method annotated with  `@Transactional` or `@Retryable` , `@BatchRun` will surround the running of transaction or retry logic
+
+you should not call method within the same class.

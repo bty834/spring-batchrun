@@ -66,4 +66,5 @@ public class PartitionArray implements Iterable<Object[]> {
             return original.length % batchSize == 0 ? original.length / batchSize : original.length / batchSize + 1;
         }
     }
+
 }
