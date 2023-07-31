@@ -54,6 +54,8 @@ PS:
 
 The order of this AOP is `Ordered.LOWEST_PRECEDENCE - 100`.
 
+
 When method annotated with  `@Transactional` or `@Retryable` , `@BatchRun` will surround the running of transaction or retry logic
 
 you should not call method within the same class.
+
