@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dcc6ea4-a0c4-409c-b572-c883b8fd529f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/core/PartitionArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/core/PartitionArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/core/PartitionList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/btyhub/batchrun/core/PartitionList.java" afterDir="false" />
-    </list>
+    <list default="true" id="9dcc6ea4-a0c4-409c-b572-c883b8fd529f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,6 +116,7 @@
       <workItem from="1690103192245" duration="2503000" />
       <workItem from="1690122493002" duration="573000" />
       <workItem from="1690462214301" duration="372000" />
+      <workItem from="1690816101685" duration="1556000" />
     </task>
     <servers />
   </component>

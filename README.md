@@ -44,11 +44,11 @@ public class TestService {
 
 }
 ```
-- method has only one parameter，no need to annotate with `@BatchParam`;
+- When method has only one parameter，no need to be annotated with `@BatchParam`;
 
-- method has many parameter，only one parameter can be annotated with `@BatchParam` ;
+- When method has many parameters，only one parameter can be annotated with `@BatchParam`;
 
-- parameter type and return type  can only be  `Object[]` or `List` 
+- Parameter type & return type  can only be  `Object[]` or `List`;
 
 PS:
 
